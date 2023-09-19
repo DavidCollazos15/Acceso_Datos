@@ -10,6 +10,7 @@ public class Ej2 {
 
         ArrayList<Integer> ordenar = new ArrayList();
         Scanner sc = new Scanner(System.in);
+
         System.out.println("Introduce 3 numeros para ordenarlos");
         System.out.print("1ºnumero:");
         int numero1 = sc.nextInt();
@@ -20,14 +21,15 @@ public class Ej2 {
         System.out.print("3ºnumero:");
         int numero3 = sc.nextInt();
         ordenar.add(numero3);
-        Collections.sort(ordenar);
-        System.out.print("Ordenados son:");
-        Iterator var6 = ordenar.iterator();
 
-        while(var6.hasNext()) {
-            Integer lista = (Integer)var6.next();
+        Collections.sort(ordenar);
+
+        System.out.print("Ordenados son:");
+
+        for (int num : ordenar) {
             System.out.print(" ");
-            System.out.print(lista);
+            System.out.print(num);
         }
+
     }
 }
