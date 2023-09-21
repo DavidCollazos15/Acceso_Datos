@@ -22,10 +22,12 @@ public class Ej2 {
         int numero3 = sc.nextInt();
         ordenar.add(numero3);
 
+        //Esto lo ordena
         Collections.sort(ordenar);
 
         System.out.print("Ordenados son:");
 
+        //Imprime por pantalla
         for (int num : ordenar) {
             System.out.print(" ");
             System.out.print(num);
