@@ -32,6 +32,5 @@ public class Ej2 {
             System.out.print(" ");
             System.out.print(num);
         }
-
     }
 }
