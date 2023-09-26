@@ -19,7 +19,7 @@ public class Ej8 {
         marcas.add("Toyota");
         marcas.add("Seat");
 
-        System.out.println("Los pares son");
+        System.out.println("Los pares son:");
         pares(marcas);
     }
 
