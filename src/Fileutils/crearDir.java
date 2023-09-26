@@ -8,7 +8,7 @@ public class crearDir {
     public static void main(String[] args) {
 
         // Definir los nombres de los archivos
-        String nombreArchivo1 = "ficheroº.txt";
+        String nombreArchivo1 = "fichero1.txt";
         String nombreArchivo2 = "fichero2.txt";
         String nombreCopia = "fichero_copia.txt";
 
