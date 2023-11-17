@@ -21,7 +21,7 @@ public class FicherosBinariosPersona {
             objectOutputStream.close();
             fileOutputStream.close();
 
-            System.out.println("Objeto Persona guardado con éxito.");
+            System.out.println("Objeto Persona guardado con exito.");
 
           // En caso de error, imprime información sobre la excepción.
         } catch (IOException e) {
@@ -44,7 +44,7 @@ public class FicherosBinariosPersona {
             objectInputStream.close();
             fileInputStream.close();
 
-            System.out.println("Objeto Persona recuperado con éxito.");
+            System.out.println("Objeto Persona recuperado con exito.");
 
             // En caso de error, imprime información sobre la excepción.
         } catch (IOException | ClassNotFoundException e) {
@@ -80,7 +80,7 @@ public class FicherosBinariosPersona {
             // Imprime los detalles de la Persona recuperada.
             System.out.println(personaRecuperada.toString());
 
-            System.out.println("Modificando el objeto Persona y guardándolo de nuevo...");
+            System.out.println("Modificando el objeto Persona y guardandolo de nuevo...");
 
             // Modifica algunos atributos de la Persona recuperada.
             personaRecuperada.setNombre("Paco");

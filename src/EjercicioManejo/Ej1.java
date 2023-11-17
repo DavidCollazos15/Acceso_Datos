@@ -9,7 +9,6 @@ public class Ej1 {
 
 
         //Nombre del directorio
-
         String directorio = "NUEVODIR";
 
         // Verificar si el directorio existe, si no existe, créalo
