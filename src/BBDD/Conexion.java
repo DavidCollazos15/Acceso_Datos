@@ -21,10 +21,6 @@ public class Conexion {
         }catch (SQLException e){
             e.printStackTrace();
         }
-
-        Class.forName("nombre_del_controlador_JDBC");
-
-
     }
 
     public void Conectar() throws SQLException {
@@ -102,45 +98,4 @@ public class Conexion {
         statement.close();
         conexion.close();
     }
-
-    public void SELECT() throws SQLException {
-
-        //Conectarlo a la base de datos
-        Conectar();
-        // Crear una declaración SQL
-        statement = conexion.createStatement();
-
-        // Consulta SQL para obtener los campos emp_no, oficio, dept_no y dnombre
-        String consulta = "SELECT emp_no, apellido, oficio, dir, fecha_alt, salario, comision, dept_no FROM Empleados";
-
-        // Ejecutar la consulta
-        resultSet = statement.executeQuery(consulta);
-
-        // Iterar sobre los resultados y mostrar los datos
-        while (resultSet.next()) {
-            int emp_no = resultSet.getInt("emp_no");
-            String apellido = resultSet.getString("apellido");
-            String oficio = resultSet.getString("oficio");
-            int dir = resultSet.getInt("dir");
-            Date fecha_alt = resultSet.getDate("fecha_alt");
-            float salario = resultSet.getFloat("salario");
-            float comision = resultSet.getFloat("comision");
-            int dept_no = resultSet.getInt("dept_no");
-
-            System.out.println("Emp_No: " + emp_no +
-                    ", Apellido: " + apellido +
-                    ", Oficio: " + oficio +
-                    ", Dir: " + dir +
-                    ", Fecha_alt: " + fecha_alt +
-                    ", Salario: " + salario +
-                    ", Comision: " + comision +
-                    ", Dept_No: " + dept_no);
-        }
-
-        resultSet.close();
-        statement.close();
-        conexion.close();
-
-    }
-
 }

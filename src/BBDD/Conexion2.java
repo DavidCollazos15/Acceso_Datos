@@ -11,13 +11,13 @@ public class Conexion2 {
     private Statement statement = null;
     private ResultSet resultSet = null;
     private Connection conexion = null;
+    static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) throws SQLException {
 
 // Ejecutarlo
         Conexion2 miConexion2 = new Conexion2();
         try {
-            Scanner sc = new Scanner(System.in);
             int valor = -1; // Inicializamos valor con un número que no sea 0 para entrar al bucle
 
             while (valor != 0) {
@@ -122,7 +122,6 @@ public class Conexion2 {
         String consulta = "SELECT emp_no, apellido, oficio, dir, fecha_alt, salario, comision, dept_no FROM Empleados WHERE emp_no = ?";
 
         // Crear una sentencia preparada para la consulta
-        Scanner sc = new Scanner(System.in);
         System.out.println("Introduce el ID del empleado:");
         int empleadoId = sc.nextInt();
 
@@ -160,8 +159,6 @@ public class Conexion2 {
     private void INSERT() throws SQLException {
         //Conectar a la base de datos
         Conectar();
-
-        Scanner sc = new Scanner(System.in);
 
         System.out.println("Ingrese el número de empleado (emp_no):");
         int nuevoEmpNo = sc.nextInt();
@@ -256,7 +253,17 @@ public class Conexion2 {
     }
 
     private void DELETE() throws SQLException {
+        //Conectar a la base de datos
+        Conectar();
 
+        System.out.println("Introduce el ID del empleado que quieras eliminar");
+        int empleadoID = sc.nextInt(); // ID del empleado a actualizar
+        sc.nextLine(); // Consumir la nueva línea pendiente
+
+        String consulta = "DELETE FROM Empleados WHERE emp_no = ?";
+        PreparedStatement preparedStatement = conexion.prepareStatement(consulta);
+        preparedStatement.setInt(1, empleadoID);
+        System.out.println("Empleado: "+empleadoID+" a sido eliminado");
     }
 
 }
